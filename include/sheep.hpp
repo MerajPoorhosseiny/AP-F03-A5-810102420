@@ -1,18 +1,17 @@
 #include "global.hpp"
 
-class sheep
+class Sheep
 {
 private:
-    /* data */
+    Sheep_configs sheep_info;
+    int sheep_speed = CONSTANT_SPEED;
+    bool sheep_side;
+    bool face_off;
+
 public:
-    sheep(/* args */);
-    ~sheep();
+    Sheep();
+    Sheep(string sheep_name, int player_pos);
+    ~Sheep();
+    void reset_speed(int current_strength);
+    void collision();
 };
-
-sheep::sheep(/* args */)
-{
-}
-
-sheep::~sheep()
-{
-}
