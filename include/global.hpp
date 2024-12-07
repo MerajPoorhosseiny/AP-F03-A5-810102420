@@ -4,7 +4,7 @@
 
 #include <array>
 #include <deque>
-#include <math.h>
+#include <cmath>
 #include <random>
 #include <chrono>
 #include <vector>
@@ -32,22 +32,22 @@ const string PICS_PATH = "./files/pics/",
              AUDIO_PATH = "./files/audio/",
              FONTS_PATH = "./files/fonts/";
 
-struct Sheep_configs
-{
-    string name;
-    int damage;
-    int strength;
-    float displayProb;
-};
-
-const vector<Sheep_configs> SHEEP_CONFIGS = {
-    {
-        {"Timmy", 50, 50, 0.5f},
-        {"Shaun", 30, 150, 0.3f},
-        {"Meow", 10, 250, 0.2f},
-    }};
+// const vector<Sheep_configs> SHEEP_CONFIGS = {
+//     {
+//         {"Timmy", 50, 50, 0.5f},
+//         {"Shaun", 30, 150, 0.3f},
+//         {"Meow", 10, 250, 0.2f},
+//     }};
 
 constexpr int COOLDOWN_MS = 2000;
 constexpr int INITIAL_HEALTH = 400;
 constexpr int CONSTANT_SPEED = 300;
+#define debug(x) cout << x << endl, exit(0);
+
+
+
+
+#include "setting.hpp"
+
+
 #endif // CONFIGS_HPP_INCLUDE
