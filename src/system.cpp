@@ -162,3 +162,14 @@ void System::handle_key_press(Event ev)
     break;
   }
 }
+
+void System::set_background_texture()
+{
+  if (mode == Day)
+    if (!backgroundTexture.loadFromFile(PICS_PATH + "g_DayBackground.png"))
+      debug("failed to load image");
+  if (mode == Night)
+    if (!backgroundTexture.loadFromFile(PICS_PATH + "g_NightBackground.png"))
+      debug("failed to load image");
+  backgroundSprite.setTexture(backgroundTexture);
+}
