@@ -84,3 +84,6 @@ bool Menu_Handler::check_start(){
     return StartKey;
 }
 
+bool Menu_Handler::check_exit(){
+    return ExitKey;
+}
