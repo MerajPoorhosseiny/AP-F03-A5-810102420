@@ -1,18 +1,7 @@
 #include "global.hpp"
 
-class Player
+enum player_side
 {
-private:
-    /* data */
-public:
-    Player(/* args */);
-    ~Player();
+    left,
+    right,
 };
-
-Player::Player(/* args */)
-{
-}
-
-Player::~Player()
-{
-}
