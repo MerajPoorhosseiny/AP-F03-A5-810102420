@@ -22,3 +22,14 @@ System::~System()
 {
   delete game_handler;
 }
+
+void System::run()
+{
+  while (window.isOpen() and state != EXIT)
+  {
+    update();
+    render();
+    handle_events();
+  }
+  exit(0);
+}
