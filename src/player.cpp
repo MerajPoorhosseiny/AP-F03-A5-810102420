@@ -26,3 +26,8 @@ void Player::player_update()
         death = true;
     }
 }
+
+void Player::player_render(RenderWindow &window)
+{
+    player_healthbar->health_render(window);
+}
