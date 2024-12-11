@@ -18,3 +18,18 @@ private:
     Font font;
     Text text;
 };
+
+class Player
+{
+private:
+    player_side side;
+    int health;
+    Health* player_healthbar;
+public:
+    Player(player_side pside);
+    ~Player();
+    void taking_damage(int input_damage);
+    void player_update();
+    void player_render(RenderWindow &Window);
+    bool death;
+};
