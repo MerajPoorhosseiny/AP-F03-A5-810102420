@@ -43,3 +43,30 @@ Menu_Handler::~Menu_Handler()
 {
     
 }
+
+void Menu_Handler::update(Vector2i mousePos){
+    StartKey = false;
+    ExitKey = false;
+    ModeKey = false;
+    Vector2f sspritePos = StartKeySprite.getPosition();
+    Vector2i sspriteSize = {StartKeySprite.getTextureRect().width, StartKeySprite.getTextureRect().height};
+    if (mousePos.x >= sspritePos.x && mousePos.x <= sspritePos.x + sspriteSize.x &&
+        mousePos.y >= sspritePos.y && mousePos.y <= sspritePos.y + sspriteSize.y)
+    {
+        StartKey = true;
+    }
+    Vector2f espritePos = ExitKeySprite.getPosition();
+    Vector2i espriteSize = {ExitKeySprite.getTextureRect().width, ExitKeySprite.getTextureRect().height};
+    if (mousePos.x >= espritePos.x && mousePos.x <= espritePos.x + espriteSize.x &&
+        mousePos.y >= espritePos.y && mousePos.y <= espritePos.y + espriteSize.y)
+    {
+        ExitKey = true;
+    }
+    Vector2f mspritePos = ModeKeySprite.getPosition();
+    Vector2i mspriteSize = {ModeKeySprite.getTextureRect().width, ModeKeySprite.getTextureRect().height/4};
+    if (mousePos.x >= mspritePos.x && mousePos.x <= mspritePos.x + mspriteSize.x &&
+        mousePos.y >= mspritePos.y && mousePos.y <= mspritePos.y + mspriteSize.y)
+    {
+        ModeKey = true;
+    }
+}
