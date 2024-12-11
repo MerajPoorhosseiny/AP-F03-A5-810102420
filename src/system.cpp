@@ -75,3 +75,25 @@ void System::update()
     break;
   }
 }
+
+void System::render()
+{
+  window.clear();
+  switch (state)
+  {
+  case (GAME):
+    window.draw(backgroundSprite);
+    game_handler->render(window);
+    break;
+  case (MENU):
+    window.draw(menuSprite);
+    menu_handler->render(window);
+    break;
+  case (GAMEOVER_SCREEN):
+    window.draw(gameoverSprite);
+    break;
+  case (EXIT):
+    break;
+  }
+  window.display();
+}
