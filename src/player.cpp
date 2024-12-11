@@ -48,3 +48,8 @@ Health::Health(player_side side)
         text.setPosition(RIGHT_PLAYER_HEALTHBAR);
     }
 }
+
+Health::~Health()
+{
+    
+}
