@@ -80,3 +80,7 @@ void Menu_Handler::render(RenderWindow &window){
         window.draw(ModeKeySprite);
 }
 
+bool Menu_Handler::check_start(){
+    return StartKey;
+}
+
