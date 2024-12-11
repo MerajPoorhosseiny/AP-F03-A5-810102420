@@ -33,3 +33,25 @@ void System::run()
   }
   exit(0);
 }
+
+void System::handle_events()
+{
+  Event event;
+  while (window.pollEvent(event))
+  {
+    switch (event.type)
+    {
+    case (Event::Closed):
+      window.close();
+      state = EXIT;
+      break;
+    case (Event::MouseButtonPressed):
+      handle_key_press(event);
+      break;
+    case (Event::MouseButtonReleased):
+      break;
+    default:
+      break;
+    }
+  }
+}
