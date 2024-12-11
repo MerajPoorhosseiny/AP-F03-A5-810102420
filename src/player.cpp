@@ -12,3 +12,8 @@ Player::~Player()
 {
     
 }
+
+void Player::taking_damage(int input_damage)
+{
+    health -= input_damage;
+}
