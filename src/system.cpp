@@ -184,3 +184,10 @@ void System::set_menu_texture()
       debug("failed to load image");
   menuSprite.setTexture(menuTexture);
 }
+
+void System::set_gameover_texture()
+{
+  if (!gameoverTexture.loadFromFile(PICS_PATH + "g_GameOverScreen.png"))
+    debug("failed to load image");
+  gameoverSprite.setTexture(gameoverTexture);
+}
