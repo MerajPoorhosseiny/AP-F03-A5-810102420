@@ -53,3 +53,8 @@ Health::~Health()
 {
     
 }
+
+void Health::health_update(int health)
+{
+    text.setString(to_string(health));
+}
