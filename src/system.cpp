@@ -55,3 +55,23 @@ void System::handle_events()
     }
   }
 }
+
+void System::update()
+{
+  Vector2i pos = Mouse::getPosition(window);
+  switch (state)
+  {
+  case (GAME):
+    game_handler->update();
+    if (game_handler->check_gameover())
+      state = GAMEOVER_SCREEN;
+    break;
+  case (MENU):
+    menu_handler->update(pos);
+    break;
+  case (GAMEOVER_SCREEN):
+    break;
+  case (EXIT):
+    break;
+  }
+}
