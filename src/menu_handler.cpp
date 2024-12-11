@@ -87,3 +87,7 @@ bool Menu_Handler::check_start(){
 bool Menu_Handler::check_exit(){
     return ExitKey;
 }
+
+bool Menu_Handler::check_mode(){
+    return ModeKey;
+}
