@@ -97,3 +97,68 @@ void System::render()
   }
   window.display();
 }
+
+void System::handle_key_press(Event ev)
+{
+  if (ev.mouseButton.button == Mouse::Right)
+    return;
+  char pressedKey;
+  if (ev.type == Event::KeyPressed)
+  {
+    Keyboard::Key key = ev.key.code;
+
+    if (key >= Keyboard::A && key <= Keyboard::Z)
+    {
+      if (ev.key.shift || Keyboard::isKeyPressed(Keyboard::LShift) || Keyboard::isKeyPressed(Keyboard::RShift))
+        pressedKey = 'A' + (key - Keyboard::A);
+      else
+        pressedKey = 'a' + (key - Keyboard::A);
+    }
+    else if (key == Keyboard::Up)
+    {
+      pressedKey = '↑';
+    }
+    else if (key == Keyboard::Down)
+    {
+      pressedKey = '↓';
+    }
+    else if (key == Keyboard::Space)
+    {
+      pressedKey = ' ';
+    }
+    else if (key == Keyboard::Enter)
+    {
+      pressedKey = '\n';
+    }
+  }
+  switch (state)
+  {
+  case (GAME):
+    game_handler->handle_key_press(pressedKey);
+    break;
+  case (MENU):
+    if (menu_handler->check_start())
+    {
+      game_handler = new Game_Handler();
+      state = GAME;
+    }
+    if (menu_handler->check_exit())
+      state = EXIT;
+    if (menu_handler->check_mode())
+    {
+      if (mode == Day)
+        mode = Night;
+      else if (mode == Night)
+        mode = Day;
+      set_background_texture();
+      set_menu_texture();
+    }
+    break;
+  case (GAMEOVER_SCREEN):
+    delete game_handler;
+    state = MENU;
+    break;
+  case (EXIT):
+    break;
+  }
+}
