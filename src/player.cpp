@@ -17,3 +17,12 @@ void Player::taking_damage(int input_damage)
 {
     health -= input_damage;
 }
+
+void Player::player_update()
+{
+    player_healthbar->health_update(health);
+    if (health == 0)
+    {
+        death = true;
+    }
+}
