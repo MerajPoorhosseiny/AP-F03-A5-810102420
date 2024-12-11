@@ -31,3 +31,20 @@ void Player::player_render(RenderWindow &window)
 {
     player_healthbar->health_render(window);
 }
+
+Health::Health(player_side side)
+{
+    if (!font.loadFromFile(FONTS_PATH + "HealthFont.otf"))
+        debug("failed to load player texture");
+    text.setFont(font);
+    text.setFillColor(Color::Black);
+    text.setCharacterSize(24);
+    if (side == player_side::left)
+    {
+        text.setPosition(LEFT_PLAYER_HEALTHBAR);
+    }
+    else
+    {
+        text.setPosition(RIGHT_PLAYER_HEALTHBAR);
+    }
+}
