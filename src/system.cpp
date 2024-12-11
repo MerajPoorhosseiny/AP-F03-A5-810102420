@@ -17,3 +17,8 @@ System::System(int width, int height)
   music.play();
   menu_handler = new Menu_Handler();
 }
+
+System::~System()
+{
+  delete game_handler;
+}
