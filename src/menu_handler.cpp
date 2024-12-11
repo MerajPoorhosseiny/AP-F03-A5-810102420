@@ -70,3 +70,13 @@ void Menu_Handler::update(Vector2i mousePos){
         ModeKey = true;
     }
 }
+
+void Menu_Handler::render(RenderWindow &window){
+    if(StartKey)
+        window.draw(StartKeySprite);
+    if(ExitKey)
+        window.draw(ExitKeySprite);
+    if(ModeKey)
+        window.draw(ModeKeySprite);
+}
+
