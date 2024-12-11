@@ -7,3 +7,8 @@ Player::Player(player_side pside)
     health = INITIAL_HEALTH;
     player_healthbar = new Health(side);
 }
+
+Player::~Player()
+{
+    
+}
