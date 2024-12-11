@@ -38,3 +38,8 @@ Menu_Handler::Menu_Handler (){
     ModeKeySprite.setScale(1, 1);
     ModeKeySprite.setPosition(0 ,0);
 }
+
+Menu_Handler::~Menu_Handler()
+{
+    
+}
